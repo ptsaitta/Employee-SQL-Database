@@ -1,3 +1,12 @@
+DROP TABLE IF EXISTS Departments;
+DROP TABLE IF EXISTS Department_Employees;
+DROP TABLE IF EXISTS Department_Manager;
+DROP TABLE IF EXISTS Employees;
+DROP TABLE IF EXISTS Salaries;
+DROP TABLE IF EXISTS Titles;
+
+
+
 CREATE TABLE Departments (
 dept_name varchar(100),
 dept_no varchar(6),
