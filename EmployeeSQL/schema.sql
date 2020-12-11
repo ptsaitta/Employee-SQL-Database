@@ -1,14 +1,14 @@
-DROP TABLE IF EXISTS Departments;
-DROP TABLE IF EXISTS Department_Employees;
-DROP TABLE IF EXISTS Department_Manager;
-DROP TABLE IF EXISTS Employees;
-DROP TABLE IF EXISTS Salaries;
-DROP TABLE IF EXISTS Titles;
+DROP TABLE IF EXISTS Departments CASCADE;
+DROP TABLE IF EXISTS Department_Employees CASCADE;
+DROP TABLE IF EXISTS Department_Manager CASCADE;
+DROP TABLE IF EXISTS Employees CASCADE;
+DROP TABLE IF EXISTS Salaries CASCADE;
+DROP TABLE IF EXISTS Titles CASCADE;
 
 CREATE TABLE Titles (
 title_id varchar(5),
 title VARCHAR(100),
-PRIMARY KEY (title_id),
+PRIMARY KEY (title_id)
 );
 
 CREATE TABLE Employees (
@@ -19,7 +19,8 @@ first_name varchar(30),
 last_name varchar(30),
 sex varchar(1),
 hire_date date,
-PRIMARY KEY (emp_no)
+PRIMARY KEY (emp_no),
+FOREIGN KEY (emp_title_id) REFERENCES Titles(title_id)
 );
 
 CREATE TABLE Departments (
