@@ -30,3 +30,11 @@ INNER JOIN Departments ON Department_Employees.dept_no = Departments.dept_no;
 SELECT Employees.first_name, Employees.last_name, Employees.sex
 FROM Employees
 WHERE Employees.first_name = 'Hercules' AND Left(Employees.last_name, 1) = 'B';
+
+---List all employees in the Sales department, including their employee number, last name, first name, and department name
+
+SELECT Employees.emp_no, Employees.last_name, Employees.first_name, Departments.dept_name
+FROM Employees
+INNER JOIN Department_Employees ON Employees.emp_no = Department_Employees.emp_no
+INNER JOIN Departments ON Departments.dept_no = Department_Employees.dept_no
+WHERE Departments.dept_name = 'Sales';
