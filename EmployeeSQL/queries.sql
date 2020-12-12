@@ -25,3 +25,8 @@ FROM Department_Employees
 INNER JOIN Employees ON Department_Employees.emp_no = Employees.emp_no
 INNER JOIN Departments ON Department_Employees.dept_no = Departments.dept_no;
 
+---List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+
+SELECT Employees.first_name, Employees.last_name, Employees.sex
+FROM Employees
+WHERE Employees.first_name = 'Hercules' AND Left(Employees.last_name, 1) = 'B';
