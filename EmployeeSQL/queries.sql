@@ -53,3 +53,10 @@ SELECT Employees.last_name, COUNT(*)
 FROM Employees
 GROUP BY Employees.last_name
 ORDER BY COUNT(Employees.last_name) DESC;
+
+---Epilogue
+SELECT Employees.emp_no, Employees.first_name, Employees.last_name
+FROM Employees
+WHERE emp_no = '499942'
+
+---What a prankster of a boss I've got...

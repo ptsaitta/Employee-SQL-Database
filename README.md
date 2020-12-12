@@ -7,3 +7,5 @@
 #Maybe it was b/c I had the columns in the wrong order when I first constructed the table, though I dropped the table many times
 #since I made the original mistake and it would keep setting the columns in the columns tab (it didn't try setting them at all for other tables), 
 #and still incorrectly.
+
+#emp_no 499942 is employee April Foolsday hardy har har
