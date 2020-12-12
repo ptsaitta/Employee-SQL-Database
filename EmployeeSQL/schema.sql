@@ -24,21 +24,21 @@ FOREIGN KEY (emp_title_id) REFERENCES Titles(title_id)
 );
 
 CREATE TABLE Departments (
+dept_no varchar(100) NOT NULL,
 dept_name varchar(100) NOT NULL,
-dept_no varchar(6) NOT NULL,
 PRIMARY KEY (dept_no)
 );
 
 CREATE TABLE Department_Employees (
-dept_no varchar(6) NOT NULL,
 emp_no int NOT NULL,
-PRIMARY KEY (dept_no, emp_no),
+dept_no varchar(100) NOT NULL,
+PRIMARY KEY (emp_no, dept_no),
 FOREIGN KEY (dept_no) REFERENCES Departments(dept_no),
 FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
 );
 
 CREATE TABLE Department_Manager (
-dept_no varchar(6) NOT NULL,
+dept_no varchar(100) NOT NULL,
 emp_no int NOT NULL,
 PRIMARY KEY (dept_no, emp_no),
 FOREIGN KEY (dept_no) REFERENCES Departments(dept_no)
