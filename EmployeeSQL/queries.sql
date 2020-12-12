@@ -17,3 +17,11 @@ SELECT Department_Manager.dept_no, Department_Manager.emp_no, Departments.dept_n
 FROM Department_Manager
 INNER JOIN Departments ON (Department_Manager.dept_no = Departments.dept_no)
 INNER JOIN Employees ON (Department_Manager.emp_no = Employees.emp_no);
+
+---List the department of each employee with the following information: employee number, last name, first name, and department name
+
+SELECT Employees.emp_no, Employees.last_name, Employees.first_name, Departments.dept_name
+FROM Department_Employees
+INNER JOIN Employees ON Department_Employees.emp_no = Employees.emp_no
+INNER JOIN Departments ON Department_Employees.dept_no = Departments.dept_no;
+
