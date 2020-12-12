@@ -10,3 +10,10 @@ SELECT Employees.last_name, Employees.first_name, Employees.hire_date
 FROM Employees
 WHERE hire_date BETWEEN '1/1/1986' and '1/1/1987'; ---1st date is inclusive; 2nd is exclusive. Only single quotes work; double ones don't
 												   
+---List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name
+---department_manager table has dept_nos (which can get dept_name) and emp_nos (which can get last_name, first_name)
+
+SELECT Department_Manager.dept_no, Department_Manager.emp_no, Departments.dept_name, Employees.last_name, Employees.first_name
+FROM Department_Manager
+INNER JOIN Departments ON (Department_Manager.dept_no = Departments.dept_no)
+INNER JOIN Employees ON (Department_Manager.emp_no = Employees.emp_no);
